@@ -1,10 +1,10 @@
 <template>
     <div class="pay-box" v-if="isPay">
         <div>
-            <!--输入的密码-->
+            <!--输入的数字-->
             <div class="pas-box v-1px">
                 <div v-for="(pas,i) in pasDigits" :key="i" :class="{'v-1px-l':i>0}">
-                    <input type="password" :value="val[i]" disabled>
+                    <input type="number" :value="val[i]" disabled>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
             },
             pasDigits: {// 密码位数
                 type: Number,
-                default: 6
+                default: 4
             },
             isPay: {
                 type: Boolean,

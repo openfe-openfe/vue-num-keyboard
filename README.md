@@ -13,3 +13,5 @@ components: {
   numKeyboard
 }
 ```
+### 演示gif
+![image](http://oij04cgoe.bkt.clouddn.com/112222.gif)
