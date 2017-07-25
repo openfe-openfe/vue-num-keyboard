@@ -11,7 +11,15 @@
             <!--keyboard-->
             <transition name="slide">
                 <div class="key-box">
-                   
+                   <div class="item v-1px-t" v-for="(item, i) in keyList" :key="i">
+                        <div class="key"
+                             v-for="(val, key) in item"
+                             :key="key"
+                             @touchstart="inputStart(val, $event)"
+                             @touchend="inputEnd($event)" :class="{'v-1px-l':key!=0}">
+                            {{val}}
+                        </div>
+                    </div>
                     <div class="item v-1px-t">
                         <div class="key  " style="background: #e8e8e8"></div>
                         <div class="key v-1px-l"

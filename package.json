@@ -1,7 +1,7 @@
 {
   "name": "vue-num-keyboard",
   "description": "A Vue component to num-keyboard",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "songhao",
   "private": false,
   "license": "MIT",
