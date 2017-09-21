@@ -2,7 +2,7 @@
 为vue提供的自定义数字键盘
 ## 使用方法
 ```shell
-npm i wc-keyboard --save
+npm i vue-num-keyboard --save
 ```
 ```javascript
 import shKeyBoard from 'vue-num-keyboard'
@@ -19,3 +19,7 @@ Vue.use(shKeyBoard);
 	placeholder="请输入提现金额"
 	label="提现金额"/>
 ```
+
+## 效果图
+
+![image](https://songhaoreact.github.com/vue-num-keyboard/blob/master/demo.gif)
