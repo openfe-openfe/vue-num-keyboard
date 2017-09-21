@@ -22,4 +22,4 @@ Vue.use(shKeyBoard);
 
 ## 效果图
 
-![image](https://songhaoreact.github.com/vue-num-keyboard/blob/master/demo.gif)
+![image](https://github.com/songhaoreact/vue-num-keyboard/blob/master/demo.gif)
