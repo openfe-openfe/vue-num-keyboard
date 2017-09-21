@@ -1,17 +1,21 @@
-# vue-num-keyboard
+## vue-num-keyboard
+为vue提供的自定义数字键盘
+## 使用方法
+```shell
+npm i wc-keyboard --save
+```
+```javascript
+import shKeyBoard from 'vue-num-keyboard'
+import 'vue-num-keyboard/style.css'
+Vue.use(shKeyBoard);
 
-A Vue component to num-keyboard
-一个虚拟数字键盘插件
-### 安装
 ```
-npm install vue-num-keyboard -S
+
+```html
+<sh-keyboard
+	v-model="value"   // 输入框的值
+	inter="5"         // 限制整数位数
+	decimal="2"       // 小数位数
+	placeholder="请输入提现金额"
+	label="提现金额"/>
 ```
-### 使用
-```
-import {numKeyboard} from 'vue-num-keyboard'
-components: {
-  numKeyboard
-}
-```
-### 演示gif
-![image](http://oij04cgoe.bkt.clouddn.com/112222.gif)
