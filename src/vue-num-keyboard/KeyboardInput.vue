@@ -189,9 +189,9 @@
 			},
 			/*输入*/
 			typing (value) {
-				
+				console.log(value)
 				/*如果是点击删除*/
-				if (value === '') {
+				if (value === 'del') {
 					this.del();
 				}
 				/*保存旧的值*/

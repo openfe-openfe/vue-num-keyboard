@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 
-import KeyBoard from './songhao-keyboard';
+import KeyBoard from './vue-num-keyboard';
 Vue.use(KeyBoard);
 
 new Vue({

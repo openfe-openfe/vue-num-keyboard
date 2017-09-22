@@ -34,7 +34,7 @@
 			}
 			.key {
 				height: 25%;
-				width: 33.33%;
+				width: 33%;
 				float: left;
 				border-right: .5px solid #d6d6d6;
 				border-top: .5px solid #d6d6d6;
@@ -87,6 +87,9 @@
 			<!-- 完成 按钮-->
 			<div class="done">
 				<p class="text" @touchstart="complete">完成</p>
+				<img src="https://avatars0.githubusercontent.com/u/22016587?v=4&s=460"
+					class="image" @touchstart="loadUrl"
+				/>
 			</div>
 			<!-- 键盘区域 -->
 			<div class="list">
@@ -106,7 +109,7 @@
 				<div class="key" 
 					@touchstart="typing('0',$event)" @touchend="inputEnd($event)">0</div>
 				<div class="key"
-					@touchstart="typing('',$event)" @touchend="inputEnd($event)"
+					@touchstart="typing('del',$event)" @touchend="inputEnd($event)"
 					>
 					<i class="iconfont icon-keyboard-delete del"></i>
 				</div>
@@ -118,6 +121,11 @@
 <script>	
 	export default {
 		props: ['show'],
+		data() {
+			return {
+				
+			}
+		},
 		methods: {
 			/*防止点击完成按钮左边的空白区域收起键盘*/
 			fn () {},
@@ -143,7 +151,19 @@
 			/*点击完成*/
 			complete () {
 				this.$emit('complete');
-			}	
+			},
+			loadUrl (){
+				window.location.href="https://github.com/songhaoreact"
+			}
 		}
 	}
 </script>
+<style>
+.image{
+	height:40px;
+	width:40px;
+	border-radius:50%;
+	position:absolute;
+	left:10px;
+}
+</style>

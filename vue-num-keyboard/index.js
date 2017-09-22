@@ -136,7 +136,7 @@ module.exports = function normalizeComponent (
 
 
 /* styles */
-__webpack_require__(8)
+__webpack_require__(7)
 
 var Component = __webpack_require__(0)(
   /* script */
@@ -144,7 +144,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(11),
   /* scopeId */
-  "data-v-e1961d2e",
+  "data-v-03841c30",
   /* cssModules */
   null
 )
@@ -164,7 +164,7 @@ module.exports = require("vue");
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__keyboard__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__keyboard__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__keyboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__keyboard__);
 //
 //
@@ -365,9 +365,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 		/*输入*/
 		typing: function typing(value) {
-
+			console.log(value);
 			/*如果是点击删除*/
-			if (value === '') {
+			if (value === 'del') {
 				this.del();
 			}
 			/*保存旧的值*/
@@ -544,6 +544,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['show'],
+	data: function data() {
+		return {};
+	},
+
 	methods: {
 		/*防止点击完成按钮左边的空白区域收起键盘*/
 		fn: function fn() {},
@@ -551,7 +555,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		/*输入*/
 		typing: function typing(val, e) {
 			this.$emit('typing', val);
-			console.log(e.currentTarget);
 			// 设置高亮
 			this.highlight(e.currentTarget);
 		},
@@ -614,19 +617,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(7)
+__webpack_require__(9)
+__webpack_require__(8)
 
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(5),
   /* template */
-  __webpack_require__(10),
+  __webpack_require__(12),
   /* scopeId */
-  "data-v-733c65f1",
+  "data-v-6f9d4a6c",
   /* cssModules */
   null
 )
@@ -635,7 +645,60 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 10 */
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "keyboard"
+  }, [_c('div', {
+    staticClass: "input-box",
+    on: {
+      "touchstart": function($event) {
+        $event.stopPropagation();
+        _vm.focus($event)
+      }
+    }
+  }, [_c('p', {
+    staticClass: "label"
+  }, [_vm._v(_vm._s(_vm.label) + " : ")]), _vm._v(" "), _c('div', {
+    staticClass: "content"
+  }, [_c('p', {
+    staticClass: "input"
+  }, [_c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.val),
+      expression: "val"
+    }],
+    staticClass: "currency"
+  }, [_vm._v("¥")]), _vm._v("\n\t\t\t\t" + _vm._s(_vm.val) + "\n\t\t\t")]), _vm._v(" "), _c('p', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.val.length === 0),
+      expression: "val.length === 0"
+    }],
+    staticClass: "placeholder"
+  }, [_vm._v("\n\t\t\t\t" + _vm._s(_vm.placeholder) + "\n\t\t\t")]), _vm._v(" "), _c('p', {
+    staticClass: "cursor",
+    style: ({
+      visibility: _vm.cursor ? 'visible' : 'hidden'
+    })
+  })])]), _vm._v(" "), _c('keyboard', {
+    attrs: {
+      "show": _vm.keyboard
+    },
+    on: {
+      "typing": _vm.typing,
+      "complete": _vm.blur
+    }
+  })], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -666,6 +729,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "touchstart": _vm.complete
     }
   }, [_vm._v("完成")])]), _vm._v(" "), _c('div', {
+    ref: "list",
     staticClass: "list"
   }, [_c('div', {
     staticClass: "key",
@@ -783,7 +847,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "key",
     on: {
       "touchstart": function($event) {
-        _vm.typing('', $event)
+        _vm.typing('del', $event)
       },
       "touchend": function($event) {
         _vm.inputEnd($event)
@@ -792,59 +856,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('i', {
     staticClass: "iconfont icon-keyboard-delete del"
   })])])])])
-},staticRenderFns: []}
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "keyboard"
-  }, [_c('div', {
-    staticClass: "input-box",
-    on: {
-      "touchstart": function($event) {
-        $event.stopPropagation();
-        _vm.focus($event)
-      }
-    }
-  }, [_c('p', {
-    staticClass: "label"
-  }, [_vm._v(_vm._s(_vm.label) + " : ")]), _vm._v(" "), _c('div', {
-    staticClass: "content"
-  }, [_c('p', {
-    staticClass: "input"
-  }, [_c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.val),
-      expression: "val"
-    }],
-    staticClass: "currency"
-  }, [_vm._v("¥")]), _vm._v("\n\t\t\t\t" + _vm._s(_vm.val) + "\n\t\t\t")]), _vm._v(" "), _c('p', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.val.length === 0),
-      expression: "val.length === 0"
-    }],
-    staticClass: "placeholder"
-  }, [_vm._v("\n\t\t\t\t" + _vm._s(_vm.placeholder) + "\n\t\t\t")]), _vm._v(" "), _c('p', {
-    staticClass: "cursor",
-    style: ({
-      visibility: _vm.cursor ? 'visible' : 'hidden'
-    })
-  })])]), _vm._v(" "), _c('keyboard', {
-    attrs: {
-      "show": _vm.keyboard
-    },
-    on: {
-      "typing": _vm.typing,
-      "complete": _vm.blur
-    }
-  })], 1)
 },staticRenderFns: []}
 
 /***/ })
