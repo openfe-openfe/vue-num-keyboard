@@ -87,9 +87,7 @@
 			<!-- 完成 按钮-->
 			<div class="done">
 				<p class="text" @touchstart="complete">完成</p>
-				<img src="https://avatars0.githubusercontent.com/u/22016587?v=4&s=460"
-					class="image" @touchstart="loadUrl"
-				/>
+				
 			</div>
 			<!-- 键盘区域 -->
 			<div class="list">
@@ -151,19 +149,10 @@
 			/*点击完成*/
 			complete () {
 				this.$emit('complete');
-			},
-			loadUrl (){
-				window.location.href="https://github.com/songhaoreact"
 			}
 		}
 	}
 </script>
 <style>
-.image{
-	height:40px;
-	width:40px;
-	border-radius:50%;
-	position:absolute;
-	left:10px;
-}
+
 </style>
