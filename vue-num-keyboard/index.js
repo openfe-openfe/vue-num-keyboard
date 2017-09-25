@@ -254,10 +254,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			default: 2
 		},
 		label: {
-			default: '消费金额'
+			default: ''
 		},
 		placeholder: {
-			default: '询问服务员后输入'
+			default: ''
 		}
 	},
 	data: function data() {
@@ -541,6 +541,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['show'],
@@ -555,6 +556,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		/*输入*/
 		typing: function typing(val, e) {
 			this.$emit('typing', val);
+			console.log(e.currentTarget);
 			// 设置高亮
 			this.highlight(e.currentTarget);
 		},
@@ -729,7 +731,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "touchstart": _vm.complete
     }
   }, [_vm._v("完成")])]), _vm._v(" "), _c('div', {
-    ref: "list",
     staticClass: "list"
   }, [_c('div', {
     staticClass: "key",

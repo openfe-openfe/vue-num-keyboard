@@ -83,10 +83,10 @@
 				default: 2
 			},
 			label: {
-				default: '消费金额'
+				default: ''
 			},
 			placeholder: {
-				default: '询问服务员后输入'
+				default: ''
 			}
 		},
 		data () {
@@ -189,7 +189,6 @@
 			},
 			/*输入*/
 			typing (value) {
-				console.log(value)
 				/*如果是点击删除*/
 				if (value === 'del') {
 					this.del();
@@ -236,6 +235,7 @@
 				if (v[0].length > this.inter) {
 					return false;
 				}
+				/*保留小数点后两位*/
 				if (v[1] && (v[1].length) > this.decimal) {
 					return false;					
 				}

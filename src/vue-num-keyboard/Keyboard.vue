@@ -130,7 +130,7 @@
 			/*输入*/
 			typing (val,e) {
 				this.$emit('typing', val);
-				console.log(e.currentTarget);
+				// console.log(e.currentTarget);
 				// 设置高亮
                 this.highlight(e.currentTarget);
 			},
